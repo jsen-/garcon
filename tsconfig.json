@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "declaration": true,
+        "emitDecoratorMetadata": true,
+        "outDir": ".es6",
+        "sourceMap": true
+    },
+    "files": [
+    	"typings/core/lib.core.es6.d.ts",
+    	"typings/node/node.d.ts",
+    	"typings/path-to-regexp/path-to-regexp.d.ts",
+    	"typings/stimpack/stimpack.d.ts",
+        "src/garcon.ts",
+        "src/context.ts"
+    ]
+}
