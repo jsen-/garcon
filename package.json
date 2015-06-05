@@ -7,7 +7,7 @@
     "build": "npm run build-typescript && npm run build-babel && npm run build-sorcery && node -e \"require('fs').createReadStream('.es6/garcon.d.ts').pipe(require('fs').createWriteStream('dist/garcon.d.ts'));\"",
     "build-typescript": "tsc",
     "build-babel": "babel .es6 --out-dir .es5 --source-maps",
-    "build-sorcery": "sorcery -i .es5/garcon.js -o dist/garcon.js",
+    "build-sorcery": "sorcery -i .es5/garcon.js -o dist/garcon.js && sorcery -i .es5/context.js -o dist/context.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,12 +25,13 @@
   },
   "homepage": "https://github.com/jsen-/garcon#readme",
   "dependencies": {
-    "stimpack": "0.0.3"
+    "stimpack": "0.0.3",
+    "typescript-bin": "file:..\\TypeScript-bin"
   },
   "devDependencies": {
     "tsd": "^0.6.1",
     "babel": "^5.5.3",
     "sorcery": "https://github.com/jsen-/sorcery/tarball/master",
-    "typescript": "https://github.com/jsen-/TypeScript/tarball/asyncFunctions"
+    "TypeScript-bin": "https://github.com/jsen-/TypeScript-bin/tarball/master"
   }
 }

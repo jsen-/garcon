@@ -48,6 +48,36 @@ var __decorate = undefined && undefined.__decorate || function (decorators, targ
 var __metadata = undefined && undefined.__metadata || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __awaiter = undefined && undefined.__awaiter || function (generator, thisArg, args, PromiseConstructor) {
+    PromiseConstructor || (PromiseConstructor = Promise);
+    return new PromiseConstructor(function (resolve, reject) {
+        generator = generator.call(thisArg, args);
+        function cast(value) {
+            return value instanceof PromiseConstructor ? value : new PromiseConstructor(function (resolve) {
+                resolve(value);
+            });
+        }
+        function onfulfill(value) {
+            try {
+                step("next", value);
+            } catch (e) {
+                reject(e);
+            }
+        }
+        function onreject(value) {
+            try {
+                step("throw", value);
+            } catch (e) {
+                reject(e);
+            }
+        }
+        function step(verb, value) {
+            var result = generator[verb](value);
+            result.done ? resolve(result.value) : cast(result.value).then(onfulfill, onreject);
+        }
+        step("next", void 0);
+    });
+};
 
 var Server = (function () {
     var _class = function Server(injector) {
@@ -78,8 +108,8 @@ var Server = (function () {
         }
     }, {
         key: "handleRequest",
-        value: function handleRequest() {
-            return __awaiter(regeneratorRuntime.mark(function callee$2$0(req, res) {
+        value: function handleRequest(req, res) {
+            return __awaiter(regeneratorRuntime.mark(function callee$2$0() {
                 var ctx, _iteratorNormalCompletion, _didIteratorError, _iteratorError, _iterator, _step, _step$value, route, _step$value$1, handler, keys;
 
                 return regeneratorRuntime.wrap(function callee$2$0$(context$3$0) {
@@ -168,7 +198,7 @@ var Server = (function () {
                             return context$3$0.stop();
                     }
                 }, callee$2$0, this, [[1, 35], [5, 21, 25, 33], [26,, 28, 32]]);
-            }).apply(this, arguments));
+            }), this);
         }
     }]);
 
