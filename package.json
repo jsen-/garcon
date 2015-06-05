@@ -1,6 +1,6 @@
 {
   "name": "garcon",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "server from the future",
   "main": "dist/garcon.js",
   "scripts": {
@@ -25,11 +25,9 @@
   },
   "homepage": "https://github.com/jsen-/garcon#readme",
   "dependencies": {
-    "stimpack": "0.0.3"
+    "stimpack": "latest"
   },
   "devDependencies": {
-    "tsd": "^0.6.1",
-    "babel": "^5.5.3",
     "sorcery": "https://github.com/jsen-/sorcery/tarball/master",
     "typescript-bin": "https://github.com/jsen-/TypeScript-bin/tarball/master"
   }
