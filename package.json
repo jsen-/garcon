@@ -1,7 +1,7 @@
 {
   "name": "garcon",
   "version": "0.0.3",
-  "description": "server from the future",
+  "description": "server framework for the future",
   "main": "dist/garcon.js",
   "scripts": {
     "build": "npm run build-typescript && npm run build-babel && npm run build-sorcery && node -e \"require('fs').createReadStream('.es6/garcon.d.ts').pipe(require('fs').createWriteStream('dist/garcon.d.ts'));\"",
