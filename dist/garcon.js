@@ -78,14 +78,15 @@ var __awaiter = undefined && undefined.__awaiter || function (generator, thisArg
         step("next", void 0);
     });
 };
-
-var Server = (function () {
-    var _class = function Server(injector) {
+exports.Context = _Context2["default"];
+var Garcon = (function () {
+    var _class = function Garcon(injector, logger) {
         var _this = this;
 
         _classCallCheck(this, _class);
 
         this.injector = injector;
+        this.logger = logger;
         this.routes = new Map();
         this.server = new http.Server();
         this.server.on("request", function (req, res) {
@@ -96,7 +97,25 @@ var Server = (function () {
     _createClass(_class, [{
         key: "listen",
         value: function listen(port, hostname, backlog) {
-            this.server.listen(port, hostname, backlog);
+            var _this2 = this;
+
+            this.server.listen(port, hostname, backlog, function () {
+                for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+                    args[_key] = arguments[_key];
+                }
+
+                _this2.info("Listening on " + port);
+                console.log(1);
+            });
+            this.server.once("listening", function () {
+                for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+                    args[_key2] = arguments[_key2];
+                }
+
+                _this2.info("Listening on " + port);
+                console.log.apply(console, args);
+            });
+            console.log(2);
         }
     }, {
         key: "get",
@@ -200,14 +219,25 @@ var Server = (function () {
                 }, callee$2$0, this, [[1, 35], [5, 21, 25, 33], [26,, 28, 32]]);
             }), this);
         }
+    }, {
+        key: "info",
+        value: function info(message) {
+            this.logger && this.logger.info(message);
+        }
+    }, {
+        key: "warn",
+        value: function warn(message) {
+            this.logger && this.logger.warn(message);
+        }
+    }, {
+        key: "error",
+        value: function error(message) {
+            this.logger && this.logger.error(message);
+        }
     }]);
 
     return _class;
 })();
-Server.Context = _Context2["default"];
-Server = __decorate([_stimpack.Inject, __metadata("design:paramtypes", [_stimpack.Injector])], Server);
-exports["default"] = Server;
-
-//# sourceMappingURL=garcon.js.map
-module.exports = exports["default"];
+exports.Garcon = Garcon;
+exports.Garcon = Garcon = __decorate([_stimpack.Inject, __metadata("design:paramtypes", [_stimpack.Injector, Object])], Garcon);
 //# sourceMappingURL=garcon.js.map

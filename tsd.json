@@ -6,16 +6,16 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "node/node.d.ts": {
-      "commit": "ed54cb6b5150759e1247583142c38ef8236a0688"
+      "commit": "bf66248dca5ad9e69a6015b0d73eb5e81cdaae6a"
     },
     "core/lib.core.es6.d.ts": {
-      "commit": "478bbbc013dccc7c9d69e56443d6bf1980e18654"
+      "commit": "bf66248dca5ad9e69a6015b0d73eb5e81cdaae6a"
     },
     "path-to-regexp/path-to-regexp.d.ts": {
-      "commit": "6c26ab1123bdb75b41c0cd4bdf450c8d6ee8cee8"
+      "commit": "bf66248dca5ad9e69a6015b0d73eb5e81cdaae6a"
     },
-    "stimpack/stimpack.d.ts": {
-      "commit": "a4ef781a923129d46439e78c2afe2e40060bfdea"
+    "common/common.d.ts": {
+      "commit": "bf66248dca5ad9e69a6015b0d73eb5e81cdaae6a"
     }
   }
 }

@@ -8,10 +8,7 @@
         "sourceMap": true
     },
     "files": [
-    	"typings/core/lib.core.es6.d.ts",
-    	"typings/node/node.d.ts",
-    	"typings/path-to-regexp/path-to-regexp.d.ts",
-    	"typings/stimpack/stimpack.d.ts",
+    	"typings/tsd.d.ts",
         "src/garcon.ts",
         "src/context.ts"
     ]
