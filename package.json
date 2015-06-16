@@ -1,13 +1,15 @@
 {
   "name": "garcon",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "server framework for the future",
   "main": "dist/garcon.js",
   "scripts": {
-    "build": "npm run build-typescript && npm run build-babel && npm run build-sorcery && node -e \"require('fs').createReadStream('.es6/garcon.d.ts').pipe(require('fs').createWriteStream('dist/garcon.d.ts'));\"",
+    "build": "npm run build-tsd && npm run build-typescript && npm run build-babel && npm run build-sorcery && npm run build-dts",
+    "build-tsd": "tsd reinstall",
     "build-typescript": "tsc",
     "build-babel": "babel .es6 --out-dir .es5 --source-maps",
     "build-sorcery": "sorcery -i .es5/garcon.js -o dist/garcon.js && sorcery -i .es5/context.js -o dist/context.js",
+    "build-dts" : "dts-generator --baseDir src --name garcon --main garcon/garcon --out dist/garcon.d.ts src/context.ts src/garcon.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -30,6 +32,12 @@
   },
   "devDependencies": {
     "sorcery": "https://github.com/jsen-/sorcery/tarball/master",
-    "typescript": "https://github.com/jsen-/TypeScript/tarball/master"
+    "typescript": "https://github.com/jsen-/TypeScript/tarball/master",
+    "dts-generator": "https://github.com/jsen-/dts-generator/tarball/master"
+  },
+  "typescript": {
+    "definitions": [
+      "dist/garcon.d.ts"
+    ]
   }
 }
