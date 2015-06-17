@@ -1,0 +1,4 @@
+﻿{
+  "include": "dist{/,/**/}*.js",
+  "cacheDir": ".cache"
+}

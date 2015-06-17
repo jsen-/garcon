@@ -5,3 +5,4 @@ typings/
 bin/
 obj/
 *.njsproj
+.cache/
