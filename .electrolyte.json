@@ -1,4 +1,7 @@
 ﻿{
   "include": "dist{/,/**/}*.js",
-  "cacheDir": ".cache"
+  "cacheDir": ".cache",
+  "babel": {
+  	"blacklist": ["regenerator"]
+  }
 }
